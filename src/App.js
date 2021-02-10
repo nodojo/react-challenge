@@ -3,9 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Users from './components/users';
 import SelectedUser from './components/selectedUser';
-
-let getUsers = () => axios.get('https://jsonplaceholder.typicode.com/users');
-let getPosts = () => axios.get('https://jsonplaceholder.typicode.com/posts');
+import BlogData from './api/blogData';
 
 class App extends Component {
   state = {
@@ -18,7 +16,7 @@ class App extends Component {
     const obj = this;
 
     axios
-      .all([getUsers(), getPosts()])
+      .all([BlogData('/users'), BlogData('/posts')])
       .then(
         axios.spread((user, post) => {
           const users = user.data;
@@ -33,9 +31,7 @@ class App extends Component {
     return (
       <>
         <SelectedUser state={this.state} />
-        <div className='float-right user-section'>
-          <Users state={this} />
-        </div>
+        <Users state={this} />
       </>
     );
   }
