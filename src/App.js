@@ -10,10 +10,13 @@ class App extends Component {
     users: [],
     posts: [],
     selectedUser: {},
+    isLoading: false,
   };
 
   componentDidMount() {
     const obj = this;
+
+    obj.setState({ isLoading: true });
 
     axios
       .all([BlogData('/users'), BlogData('/posts')])
@@ -22,14 +25,20 @@ class App extends Component {
           const users = user.data;
           const posts = post.data;
           obj.setState({ users, posts });
+
+          obj.setState({ isLoading: false });
         })
       )
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        obj.setState({ isLoading: false });
+      });
   }
 
   render() {
     return (
       <>
+        <div className={ this.state.isLoading ? 'loading' : ''}></div>
         <SelectedUser state={this.state} />
         <Users state={this} />
       </>
