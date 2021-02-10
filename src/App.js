@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Users from './components/users';
+import Posts from './components/posts';
 
 let getUsers = () => axios.get('https://jsonplaceholder.typicode.com/users');
 let getPosts = () => axios.get('https://jsonplaceholder.typicode.com/posts');
@@ -39,9 +41,7 @@ class App extends Component {
         </thead>
         <tbody>
           {obj.state.users.map((user) => (
-            <tr>
-              <td>{user.name}</td>
-            </tr>
+            <Users users={user.name} />
           ))}
         </tbody>
         <thead>
@@ -51,10 +51,7 @@ class App extends Component {
         </thead>
         <tbody>
           {obj.state.posts.map((post) => (
-            <tr>
-              <td>{post.title}</td>
-              <td>{post.body}</td>
-            </tr>
+            <Posts posts={post.title} />
           ))}
         </tbody>
       </table>
