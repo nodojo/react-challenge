@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Users from './components/users';
+import SelectedUser from './components/selectedUser';
 
 let getUsers = () => axios.get('https://jsonplaceholder.typicode.com/users');
 let getPosts = () => axios.get('https://jsonplaceholder.typicode.com/posts');
@@ -31,24 +32,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <div className='float-left selected-user-section'>
-          <h3>{this.state.selectedUser.name || `Please select a user`}</h3>
-          <div>
-            {this.state.posts
-              .filter((post) => post.userId === this.state.selectedUser.id)
-              .map((filteredPost) => (
-                <div className='selected-user-post'>
-                  <div>
-                    <strong>post id: {filteredPost.id}</strong>
-                  </div>
-                  <div>
-                    {filteredPost.title}
-                    {filteredPost.body}
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
+        <SelectedUser state={this.state} />
         <div className='float-right user-section'>
           <Users state={this} />
         </div>

@@ -118,28 +118,30 @@ button {
   background: #0288d1;
   border: 0;
   padding: 11px;
-  /* margin: -6px -6px 0 0; */
+  margin: 0 12px;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
-
 button:hover {
   background: #01579b;
 }
 
 .selected-user-section {
-  max-width: 25%;
   padding: 8px 16px;
+  width: 30%;
 }
 
 .selected-user-post {
   margin-top: 16px;
 }
 
-/* helpers */
 .user-section {
-  width: 75%;
+  width: 69%;
+}
+
+.user-section-post-0 {
+  margin-top: 40px;
 }
 
 .float-left {

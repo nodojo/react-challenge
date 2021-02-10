@@ -24,21 +24,22 @@ const Users = (obj) => {
                 <div>company: {user.company.name}</div>
               </div>
               <div>
+                <div>street: {user.address.street}</div>
+                <div>suite: {user.address.suite}</div>
+                <div>city: {user.address.city}</div>
+                <div>zip: {user.address.zipcode}</div>
                 <button
                   onClick={() => setSelectedUser(user)}
                   className='float-right'
                 >
                   Select
                 </button>
-                <div>street: {user.address.street}</div>
-                <div>suite: {user.address.suite}</div>
-                <div>city: {user.address.city}</div>
-                <div>zip: {user.address.zipcode}</div>
               </div>
               {props.state.posts
                 .filter((post) => post.userId === user.id)
-                .map((filteredPost) => (
-                  <div>
+                .map((filteredPost, index) => (
+                  <div className={`user-section-post-${index}`} key={filteredPost.userId-filteredPost.id}>
+                    <div className='float-left'>index: {index}</div>
                     <div className='float-left'>post id: {filteredPost.id}</div>
                     <div>
                       author: {user.name} ({user.username})
