@@ -1,5 +1,11 @@
 # React Coding Challenge
 
+## Live deployment
+
+This project has been set up for CI using Netlify and GitHub.
+
+[https://sad-montalcini-088d07.netlify.app/](https://sad-montalcini-088d07.netlify.app/)
+
 ## Useful links
 
 [Business Rules](https://github.com/noDojo/practice-bignerdranch/blob/master/BUSINESSRULES.md)
