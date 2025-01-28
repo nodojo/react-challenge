@@ -8,9 +8,9 @@ This project has been set up for CI using Netlify and GitHub.
 
 ## Useful links
 
-[Business Rules](https://github.com/noDojo/practice-bignerdranch/blob/master/BUSINESSRULES.md)
+[Business Rules](https://github.com/nodojo/react-challenge/blob/master/BUSINESSRULES.md)
 
-[Summary (Retro)](https://github.com/noDojo/practice-bignerdranch/blob/master/SUMMARY.md)
+[Summary (Retro)](https://github.com/nodojo/react-challenge/blob/master/SUMMARY.md)
 
 ## Getting Started with Create React App
 
